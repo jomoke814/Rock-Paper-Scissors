@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFB6A7;
+}
+
+h1 {
+    padding-bottom: 10px;
+}
+
+p {
+    padding-top: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+button {
+    background-color: #3AA3FF; 
+    border: none;   
+    border-radius: 10px;
+    padding: 1rem;
+}

@@ -13,16 +13,22 @@ function playRound (playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "it's a draw";
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+    computerScore++
     return 'You lost...Rock covered by Paper'
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    playerScore++
     return 'You win...Rock crushes Scissors'
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    computerScore++
     return 'You lost...Scissors cuts Paper'
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    computerScore++
     return 'You win...Paper covers Rock'
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    computerScore++
     return 'You lost...Scissors crushed by Rock'
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    computerScore++
     return 'You win...Scissors cuts Paper'
   }
 }

@@ -4,12 +4,10 @@ let computerScore = 0;
 function computerPlay () {
   const playerChoices = ['rock', 'paper', 'scissors'];
   const randomChoice = Math.floor(Math.random()*playerChoices.length);
-  const computerChoice = playerChoices[randomChoice]
-  return computerChoice
+  return playerChoices[randomChoice]
 }
 
 function playRound (playerSelection, computerSelection) {
-  console.log('1 ', playerSelection, '2 ', computerSelection)
   if (playerSelection === computerSelection) {
     return "it's a draw";
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -33,13 +31,20 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
-const playerSelection = 'scissors'
-
 function game () {
   for (let i = 0; i < 5; i++) {
+    const playerSelection = prompt('Choose your input', 'Rock, Paper, Scissors').toLowerCase()
     const computerSelection = computerPlay()
-    console.log(playRound(playerSelection, computerSelection))
+    playRound(playerSelection, computerSelection)
+  }
+  if (playerScore > computerScore) {
+    return '😄Hurrah!...You beat the computer!'
+  } else if (playerScore < computerScore) {
+    return '😞What a downer...You got beat by the computer!'
+  } else {
+    return "😤It's a Draw."
   }
 }
 
-game ()
+
+console.log(game ())

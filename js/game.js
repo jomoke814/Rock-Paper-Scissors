@@ -1,9 +1,10 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const rockButton = document.querySelector('.rock')
-const paperButton = document.querySelector('.paper')
-const scissorsButton = document.querySelector('.scissors')
+// const rockButton = document.querySelector('.rock')
+// const paperButton = document.querySelector('.paper')
+// const scissorsButton = document.querySelector('.scissors')
+const buttons = document.querySelectorAll('button')
 const outcomeDiv = document.querySelector('.outcome')
 const playerScoreSpan = document.querySelector('.player-score')
 const computerScoreSpan = document.querySelector('.computer-score')
@@ -58,29 +59,32 @@ const scores = (playerScore, computerScore) => {
   computerScoreSpan.innerText = `Computer Score: ${computerScore}`
 }
 
-rockButton.addEventListener('click', () => {
-  const computerSelection = computerPlay()
-  const playerSelection = 'rock'
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const computerSelection = computerPlay()
+  const playerSelection = `${button.className}`
   playRound(playerSelection, computerSelection)
   scores(playerScore, computerScore)
   checkWinner(playerScore, computerScore)
+  })
 })
 
-paperButton.addEventListener('click', () => {
-  const computerSelection = computerPlay()
-  const playerSelection = 'paper'
-  playRound(playerSelection, computerSelection)
-  scores(playerScore, computerScore)
-  checkWinner(playerScore, computerScore)
-})
+// rockButton.addEventListener('click', () => {
+  
+// })
 
-scissorsButton.addEventListener('click', () => {
-  const computerSelection = computerPlay()
-  const playerSelection = 'scissors'
-  playRound(playerSelection, computerSelection)
-  scores(playerScore, computerScore)
-  checkWinner(playerScore, computerScore)
-})
+// paperButton.addEventListener('click', () => {
+//   const computerSelection = computerPlay()
+//   const playerSelection = 'paper'
+//   playRound(playerSelection, computerSelection)
+//   scores(playerScore, computerScore)
+//   checkWinner(playerScore, computerScore)
+// })
 
-
-// game ()
+// scissorsButton.addEventListener('click', () => {
+//   const computerSelection = computerPlay()
+//   const playerSelection = 'scissors'
+//   playRound(playerSelection, computerSelection)
+//   scores(playerScore, computerScore)
+//   checkWinner(playerScore, computerScore)
+// })

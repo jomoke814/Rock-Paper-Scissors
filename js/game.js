@@ -66,3 +66,7 @@ buttons.forEach((button) => {
   checkWinner(playerScore, computerScore)
   })
 })
+
+function resetGame() {
+  location.reload();
+}

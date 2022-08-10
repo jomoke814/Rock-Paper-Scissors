@@ -1,9 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-// const rockButton = document.querySelector('.rock')
-// const paperButton = document.querySelector('.paper')
-// const scissorsButton = document.querySelector('.scissors')
 const buttons = document.querySelectorAll('button')
 const outcomeDiv = document.querySelector('.outcome')
 const playerScoreSpan = document.querySelector('.player-score')
@@ -51,6 +48,7 @@ const checkWinner = (playerScore, computerScore) => {
     h2.classList.add('computerWon')
     h2.innerText = `You lost ${playerScore} to ${computerScore} you got beat by the computer`
   }
+  document.querySelector('.reset').style.display = "inline";
   outcomeDiv.appendChild(h2)
 }
 
@@ -62,29 +60,9 @@ const scores = (playerScore, computerScore) => {
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     const computerSelection = computerPlay()
-  const playerSelection = `${button.className}`
+    const playerSelection = `${button.className}`
   playRound(playerSelection, computerSelection)
   scores(playerScore, computerScore)
   checkWinner(playerScore, computerScore)
   })
 })
-
-// rockButton.addEventListener('click', () => {
-  
-// })
-
-// paperButton.addEventListener('click', () => {
-//   const computerSelection = computerPlay()
-//   const playerSelection = 'paper'
-//   playRound(playerSelection, computerSelection)
-//   scores(playerScore, computerScore)
-//   checkWinner(playerScore, computerScore)
-// })
-
-// scissorsButton.addEventListener('click', () => {
-//   const computerSelection = computerPlay()
-//   const playerSelection = 'scissors'
-//   playRound(playerSelection, computerSelection)
-//   scores(playerScore, computerScore)
-//   checkWinner(playerScore, computerScore)
-// })
